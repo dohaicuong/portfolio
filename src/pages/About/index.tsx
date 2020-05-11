@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, Typography, makeStyles } from '@material-ui/core'
+import { Paper, Typography, makeStyles, Container } from '@material-ui/core'
 import AboutSVG from 'resources/about.svg'
 
 const About = () => {
@@ -11,6 +11,11 @@ const About = () => {
         About
       </Typography>
       <img src={AboutSVG} className={classes.image} alt='Contact Eric Do' />
+      <Container maxWidth='sm' className={classes.container}>
+        <Typography variant='subtitle1'>
+          Introduction
+        </Typography>
+      </Container>
     </Paper>
   )
 }
@@ -23,5 +28,10 @@ const useStyles = makeStyles(theme => ({
   image: {
     width: '100%',
     height: 'auto'
+  },
+  container: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    padding: theme.spacing(2),
   },
 }))
