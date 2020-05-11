@@ -17,7 +17,7 @@ const MainLayout: React.FC = ({ children }) => {
 
   return (
     <div className='MainLayout'>
-      <AppBar position='sticky' style={{ marginBottom: theme.spacing(3) }}>
+      <AppBar position='static' style={{ marginBottom: theme.spacing(3) }}>
         <HeaderLogo
           avatar='E'
           title='Eric Do Portfolio'
