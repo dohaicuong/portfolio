@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/About/index.tsx"],"names":["About","className"],"mappings":"wGAAA,2BASeA,UAPD,WACZ,OACE,yBAAKC,UAAU,aAAf","file":"static/js/5.edee66b5.chunk.js","sourcesContent":["import React from 'react'\n\nconst About = () => {\n  return (\n    <div className='AboutPage'>\n      About page\n    </div>\n  )\n}\nexport default About"],"sourceRoot":""}
