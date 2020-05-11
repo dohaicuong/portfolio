@@ -9,7 +9,22 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import routes from 'routes'
 
 import { ThemeProvider, createMuiTheme, CssBaseline } from '@material-ui/core'
-const theme = createMuiTheme()
+import MainLayout from 'layouts/MainLayout'
+const theme = createMuiTheme({
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '*': {
+          'scrollbar-width': 'thin',
+        },
+        '*::-webkit-scrollbar': {
+          width: '4px',
+          height: '4px',
+        }
+      }
+    }
+  }
+})
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,9 +33,11 @@ ReactDOM.render(
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Router>
           <Switch>
-            <React.Suspense fallback={null}>
-              {routes.map(route => <Route key={route.path} {...route} />)}
-            </React.Suspense>
+            <MainLayout>
+              <React.Suspense fallback={null}>
+                {routes.map(route => <Route key={route.path} {...route} />)}
+              </React.Suspense>
+            </MainLayout>
           </Switch>
         </Router>
       </ErrorBoundary>
