@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, makeStyles, Typography, Container, TextField, Grid, Button, LinearProgress } from '@material-ui/core'
+import { Paper, makeStyles, Typography, Container, TextField, Grid, Button, LinearProgress, Divider } from '@material-ui/core'
 import ContactSVG from 'resources/contact.svg'
 
 const Contact = () => {
@@ -13,10 +13,11 @@ const Contact = () => {
   }
 
   return (
-    <Paper className='ContactPage'>
+    <Paper className={`ContactPage ${classes.root}`}>
       <Typography variant='h5' className={classes.title}>
         Contact
       </Typography>
+      <Divider className={classes.divider} />
       <img src={ContactSVG} className={classes.image} alt='Contact Eric Do' />
       {isSubmitting && <LinearProgress />}
       <Container maxWidth='sm' className={classes.formWrapper}>
@@ -48,8 +49,14 @@ const Contact = () => {
 export default Contact
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(0.5)
+  },
   title: {
-    padding: theme.spacing(3)
+    padding: theme.spacing(1)
+  },
+  divider: {
+    marginBottom: theme.spacing(2)
   },
   image: {
     width: '100%',
